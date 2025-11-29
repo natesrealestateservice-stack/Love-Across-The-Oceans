@@ -43,10 +43,11 @@
         method="POST" 
         data-netlify="true" 
         enctype="multipart/form-data"
-        action="next-steps.html"
         class="bg-white p-8 rounded-xl shadow-lg space-y-6">
 
+        <!-- Netlify hidden inputs -->
         <input type="hidden" name="form-name" value="match-questionnaire" />
+        <input type="hidden" name="redirect" value="/next-steps.html" />
 
         <!-- Basic Info -->
         <label class="block">
@@ -79,19 +80,21 @@
         <!-- Photo Upload -->
         <label class="block">
           <span class="text-gray-700">Upload a Photo of Yourself</span>
-          <input type="file" name="user-photo" accept="image/*"
+          <input type="file" name="user-photo" accept="image/*" required
             class="mt-1 w-full border rounded-lg px-4 py-2" />
           <img id="preview" class="mt-2 rounded-lg h-32 w-32 object-cover" />
         </label>
 
         <script>
-          const input = document.querySelector('input[name="user-photo"]');
-          const preview = document.getElementById('preview');
-          input.addEventListener('change', () => {
-            const file = input.files[0];
-            if(file) {
-              preview.src = URL.createObjectURL(file);
-            }
+          document.addEventListener('DOMContentLoaded', () => {
+            const input = document.querySelector('input[name="user-photo"]');
+            const preview = document.getElementById('preview');
+            input.addEventListener('change', () => {
+              const file = input.files[0];
+              if(file) {
+                preview.src = URL.createObjectURL(file);
+              }
+            });
           });
         </script>
 
