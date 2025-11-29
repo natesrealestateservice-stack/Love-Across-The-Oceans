@@ -49,6 +49,7 @@
 
         <!-- Netlify hidden inputs -->
         <input type="hidden" name="form-name" value="match-questionnaire" />
+        <input type="hidden" name="redirect" value="/next-steps.html" />
 
         <!-- Basic Info -->
         <label class="block">
@@ -125,25 +126,6 @@
         </button>
 
       </form>
-
-      <!-- Inline Thank You Message -->
-      <div id="thankYou" class="hidden text-center text-green-600 mt-6 text-xl font-semibold">
-        Thank you! Your submission has been received. We’ll personally reach out to you within 24-48 hours, or sooner.
-      </div>
-
-      <!-- Script to show thank you message -->
-      <script>
-        const form = document.getElementById('questionnaireForm');
-        const thankYou = document.getElementById('thankYou');
-
-        form.addEventListener('submit', () => {
-          // Wait a fraction of a second for Netlify to process
-          setTimeout(() => {
-            form.style.display = 'none';
-            thankYou.classList.remove('hidden');
-          }, 100);
-        });
-      </script>
 
     </div>
   </section>
