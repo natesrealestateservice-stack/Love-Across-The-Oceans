@@ -1,83 +1,133 @@
-<form 
-  name="match-questionnaire" 
-  method="POST" 
-  data-netlify="true" 
-  enctype="multipart/form-data"
-  action="next-steps.html"
-  class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-  
-  <input type="hidden" name="form-name" value="match-questionnaire" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Across The Oceans – Match Questionnaire</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-  <!-- Basic Info -->
-  <label class="block">
-    <span class="text-gray-700">Full Name</span>
-    <input type="text" name="name" required
-      class="mt-1 w-full border rounded-lg px-4 py-2" />
-  </label>
+<body class="bg-white text-gray-900 font-sans">
 
-  <label class="block">
-    <span class="text-gray-700">Email</span>
-    <input type="email" name="email" required
-      class="mt-1 w-full border rounded-lg px-4 py-2" />
-  </label>
+  <!-- Navbar -->
+  <header class="w-full py-4 border-b mb-12">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4">
+      <h1 class="text-2xl font-bold tracking-tight text-blue-700">
+        Love Across The Oceans
+      </h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="#questionnaire" class="hover:text-blue-600">Questionnaire</a>
+      </nav>
+    </div>
+  </header>
 
-  <label class="block">
-    <span class="text-gray-700">Phone Number</span>
-    <input type="tel" name="phone" required
-      class="mt-1 w-full border rounded-lg px-4 py-2"
-      placeholder="+1 555-123-4567"
-      pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{3,4}[-.\s]?\d{4}$"
-      title="Enter a valid phone number, e.g., +1 555-123-4567" />
-  </label>
+  <!-- Hero Section -->
+  <section class="bg-blue-50 py-16">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        Complete Your Match Questionnaire
+      </h2>
+      <p class="text-lg md:text-xl text-gray-700 mt-4">
+        Provide us with your details, preferences, and a photo — we’ll handle all the matchmaking and personally connect you with your ideal partner.
+      </p>
+    </div>
+  </section>
 
-  <label class="block">
-    <span class="text-gray-700">Age</span>
-    <input type="number" name="age" required min="18"
-      class="mt-1 w-full border rounded-lg px-4 py-2" />
-  </label>
+  <!-- Questionnaire Form -->
+  <section id="questionnaire" class="py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <form 
+        name="match-questionnaire" 
+        method="POST" 
+        data-netlify="true" 
+        enctype="multipart/form-data"
+        action="next-steps.html"
+        class="bg-white p-8 rounded-xl shadow-lg space-y-6">
 
-  <!-- Photo Upload -->
-  <label class="block">
-    <span class="text-gray-700">Upload a Photo of Yourself</span>
-    <input type="file" name="user-photo" accept="image/*"
-      class="mt-1 w-full border rounded-lg px-4 py-2" />
-    <img id="preview" class="mt-2 rounded-lg h-32 w-32 object-cover" />
-  </label>
+        <input type="hidden" name="form-name" value="match-questionnaire" />
 
-  <script>
-    const input = document.querySelector('input[name="user-photo"]');
-    const preview = document.getElementById('preview');
-    input.addEventListener('change', () => {
-      const file = input.files[0];
-      if(file) {
-        preview.src = URL.createObjectURL(file);
-      }
-    });
-  </script>
+        <!-- Basic Info -->
+        <label class="block">
+          <span class="text-gray-700">Full Name</span>
+          <input type="text" name="name" required
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+        </label>
 
-  <!-- Preferences -->
-  <label class="block">
-    <span class="text-gray-700">What qualities are most important in a partner?</span>
-    <textarea name="qualities" rows="3"
-      class="mt-1 w-full border rounded-lg px-4 py-2" required></textarea>
-  </label>
+        <label class="block">
+          <span class="text-gray-700">Email</span>
+          <input type="email" name="email" required
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+        </label>
 
-  <label class="block">
-    <span class="text-gray-700">Hobbies / Interests</span>
-    <textarea name="hobbies" rows="2"
-      class="mt-1 w-full border rounded-lg px-4 py-2" required></textarea>
-  </label>
+        <label class="block">
+          <span class="text-gray-700">Phone Number</span>
+          <input type="tel" name="phone" required
+            class="mt-1 w-full border rounded-lg px-4 py-2"
+            placeholder="+1 555-123-4567"
+            pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{3,4}[-.\s]?\d{4}$"
+            title="Enter a valid phone number, e.g., +1 555-123-4567" />
+        </label>
 
-  <label class="block">
-    <span class="text-gray-700">Additional Notes / Preferences</span>
-    <textarea name="notes" rows="3"
-      class="mt-1 w-full border rounded-lg px-4 py-2"></textarea>
-  </label>
+        <label class="block">
+          <span class="text-gray-700">Age</span>
+          <input type="number" name="age" required min="18"
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+        </label>
 
-  <!-- Submit -->
-  <button type="submit"
-    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-medium">
-    Submit Questionnaire
-  </button>
+        <!-- Photo Upload -->
+        <label class="block">
+          <span class="text-gray-700">Upload a Photo of Yourself</span>
+          <input type="file" name="user-photo" accept="image/*"
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+          <img id="preview" class="mt-2 rounded-lg h-32 w-32 object-cover" />
+        </label>
 
-</form>
+        <script>
+          const input = document.querySelector('input[name="user-photo"]');
+          const preview = document.getElementById('preview');
+          input.addEventListener('change', () => {
+            const file = input.files[0];
+            if(file) {
+              preview.src = URL.createObjectURL(file);
+            }
+          });
+        </script>
+
+        <!-- Preferences -->
+        <label class="block">
+          <span class="text-gray-700">What qualities are most important in a partner?</span>
+          <textarea name="qualities" rows="3"
+            class="mt-1 w-full border rounded-lg px-4 py-2" required></textarea>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Hobbies / Interests</span>
+          <textarea name="hobbies" rows="2"
+            class="mt-1 w-full border rounded-lg px-4 py-2" required></textarea>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Additional Notes / Preferences</span>
+          <textarea name="notes" rows="3"
+            class="mt-1 w-full border rounded-lg px-4 py-2"></textarea>
+        </label>
+
+        <!-- Submit -->
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-medium">
+          Submit Questionnaire
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 text-center mt-12">
+    <p>&copy; 2025 Love Across The Oceans. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
