@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Across The Oceans</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-white text-gray-900">
+  <!-- Navbar -->
+  <header class="w-full py-4 border-b">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4">
+      <h1 class="text-2xl font-bold tracking-tight text-blue-700">
+        Love Across The Oceans
+      </h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#how" class="hover:text-blue-600">How It Works</a>
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-50 py-32">
+    <div class="max-w-5xl mx-auto text-center px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        Connecting Hearts Across the World
+      </h2>
+      <p class="text-lg md:text-xl text-gray-700 mt-4">
+        Meet real people, create real bonds, and build meaningful relationships — no borders required.
+      </p>
+      <div class="mt-8">
+        <a href="#contact"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium text-lg">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">How It Works</h3>
+
+      <div class="grid md:grid-cols-4 gap-10 text-center">
+        <div>
+          <h4 class="text-xl font-semibold mb-2">1. Create Your Profile</h4>
+          <p class="text-gray-600">Share who you are and what you're looking for.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">2. Connect Worldwide</h4>
+          <p class="text-gray-600">Browse real, verified people from around the world.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">3. Build Bonds</h4>
+          <p class="text-gray-600">Chat, call, and learn about each other safely.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">4. Meet Safely</h4>
+          <p class="text-gray-600">Use our guides to meet in person confidently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-10">About Love Across The Oceans</h3>
+
+      <p class="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+        Love Across The Oceans was created to help people form genuine, meaningful relationships beyond geographic boundaries.  
+        Whether you're seeking friendship, romance, or a lifelong partner, we provide a safe, supportive space to meet others across the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-10">Contact Us</h3>
+
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true"
+        class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+
+        <input type="hidden" name="form-name" value="contact" />
+
+        <label class="block mb-4">
+          <span class="text-gray-700">Name</span>
+          <input type="text" name="name" required
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+        </label>
+
+        <label class="block mb-4">
+          <span class="text-gray-700">Email</span>
+          <input type="email" name="email" required
+            class="mt-1 w-full border rounded-lg px-4 py-2" />
+        </label>
+
+        <label class="block mb-4">
+          <span class="text-gray-700">Message</span>
+          <textarea name="message" rows="4" required
+            class="mt-1 w-full border rounded-lg px-4 py-2"></textarea>
+        </label>
+
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg text-lg font-medium">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-8 text-center">
+    <p>&copy; 2025 Love Across The Oceans. All rights reserved.</p>
+  </footer>
+</body>
+</html>
