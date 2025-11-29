@@ -1,0 +1,5 @@
+/* Custom styles if needed (Tailwind handles most styling) */
+
+body {
+  scroll-behavior: smooth;
+}
